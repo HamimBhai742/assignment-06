@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- DaiSy UI and Tailwind CSS CDN link -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- font Mulish link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap"
+        rel="stylesheet">
+
+    <!-- font Inter link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- font awsome link -->
+    <script src="https://kit.fontawesome.com/7b3db3e91e.js" crossorigin="anonymous"></script>
+
+    <!-- internal css part -->
+    <style>
+        .font-mulish {
+            font-family: "Mulish", sans-serif;
+        }
+
+        .font-inter {
+            font-family: "Inter", sans-serif;
+        }
+
+        .bg-img1 {
+            background: url('./images/bgbanner.png');
+        }
+
+        #bg-banner {
+            background-color: #797DFC00FC;
+            background-image: linear-gradient(45deg, #797DFC, #797DFC00);
+            background-size: 100%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="max-w-[1168px] mx-auto my-10">
+        <nav class="flex justify-between font-mulish items-center">
+            <h3 class="text-4xl font-[900] text-[#12132D]">SHANTA</h3>
+            <div class="text-[#12132D99] flex gap-5 items-center">
+                <div class="bg-[#12132D08] px-3 py-2 border-2 border-[#0307121A] rounded-full"><i
+                        class="fa-solid fa-house"></i></div>
+                <div class="bg-[#12132D08] px-3 py-2 border-2 border-[#0307121A] rounded-full"><i
+                        class="fa-solid fa-pen"></i></div>
+                <div class="bg-[#12132D08] px-3 py-2 border-2 border-[#0307121A] rounded-full"><i
+                        class="fa-solid fa-user-plus"></i></div>
+                <div class="bg-[#12132D08] px-3 py-2 border-2 border-[#0307121A] rounded-full"><i
+                        class="fa-regular fa-flag"></i></div>
+                <button class="w-28 h-12 bg-[#797DFC] text-white text-xl font-bold rounded-3xl">Sing In</button>
+            </div>
+        </nav>
+
+        <div class="bg-[#12132D] mt-5 rounded-3xl font-mulish">
+            <div class=" flex justify-around pt-16 items-center bg-img1 pb-8">
+                <div class="max-w-[600px] space-y-10">
+                    <h2 class="text-6xl font-[900] text-white">Welcome to the <br><span class=""
+                            id="bg-banner">Shanta</span> Forum</h2>
+                    <p class="text-[#FFFFFFCC]">Shanta formue is located in Tejgaon, Dhaka-1208</p>
+                    <input class="p-3 rounded-3xl w-96 h-12" type="text" placeholder="Search here anything">
+                    <button
+                        class="w-28 h-11 rounded-full text-white font-xl text-xl bg-[#797DFC] right-[122px] relative">Search</button>
+                </div>
+
+                <div
+                    class="bg-[#FFFFFF] max-w-72 p-3 rounded-xl text-[#12132DCC] text-2xl font-medium font-mulish h-48">
+                    <div class="flex  justify-between">
+                        <p>Registered Users</p>
+                        <p>01</p>
+                    </div>
+                    <div class="flex  justify-between mt-3">
+                        <p>Forum</p>
+                        <p>01</p>
+                    </div>
+                    <div class="flex  justify-between mt-3">
+                        <p>Topics</p>
+                        <p>01</p>
+                    </div>
+                    <div class="flex  justify-between mt-3">
+                        <p>Replies</p>
+                        <p>01</p>
+                    </div>
+
+                </div>
+            </div>
+            <!-- <div class=""><img class="w-[1170px]" src="images/bgbanner.png" alt=""></div> -->
+        </div>
+    </header>
+    <main>
+        <section>
+             <div class="text-center">
+                <h3 class="text-[#12132D] text-5xl font-[900]">Let’s Discuss</h3>
+                <p class="text-[#12132D99] font-inter max-w-[600px] flex mx-auto mt-3">Yes, you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined .</p>
+             </div>
+
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+
+</html>
