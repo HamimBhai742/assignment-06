@@ -5,7 +5,7 @@ const allPostLoad = async (inputText, values) => {
 }
 
 const displayShowAllPost = (data, values) => {
-    // console.log(values);
+    console.log(data.posts);
     const posts = data.posts
 
     const allPosts = document.getElementById('all-posts')
@@ -16,24 +16,20 @@ const displayShowAllPost = (data, values) => {
     const noData = document.getElementById('no-data')
     if (posts.length <= 0) {
         noData.textContent = ""
-        noData.innerHTML=`
+        noData.innerHTML = `
         <h3 class="flex text-3xl font-bold justify-center">No Data Found!</h3>
         `
     }
 
     posts.forEach((post) => {
         console.log(post);
-        // if (post.isActive === true){
-        //     const cheakActive = document.getElementById('cheak-active')
-        //     console.log(cheakActive.classList);
-        //     // cheakActive.classList
-        // }
+        console.log(post.isActive);
         const div = document.createElement('div')
         div.classList = `card card-side bg-[#797DFC1A] border-2 border-[#797DFC] lg:max-w-[750px] mt-3`
         div.innerHTML = `
                     <div class="w-20 h-20  rounded-md mt-10 ml-3 relative">
                     <img class="rounded-lg" src="${post.image}" alt="">
-                        <div class="w-4 h-4 rounded-full absolute -right-1 -top-1 bg-[#10B981]" id="cheak-active" >
+                        <div class="${post.isActive?'bg-[#10B981]':'bg-[#FF3434]'} w-4 h-4 rounded-full absolute -right-1 -top-1" id="cheak-active" >
 
                         </div>
                     </div>
@@ -63,24 +59,15 @@ const displayShowAllPost = (data, values) => {
                         </div>
                     </div>
         `
-        // console.log(post.isActive);
-        // if (post.isActive === true) {
-        //     const cheakActive = document.getElementById('cheak-active')
-        //     // console.log(cheakActive);
-        //     cheakActive.classList = `absolute`
-        //     // cheakActive.classList.add('bg-[#10B981]')
-        //     // console.log('object');
-        // }
-        // // else {
-
-        // // }
         allPosts.appendChild(div)
+        const cheakActive = document.getElementById('cheak-active')
+        console.log(cheakActive.classList);
     });
-
 }
 allPostLoad('coding')
 allPostLoad('comedy')
 allPostLoad('music')
+
 
 let count = 0
 const redMessageBtn = (title, view) => {
@@ -89,8 +76,6 @@ const redMessageBtn = (title, view) => {
     const countRedMessage = document.getElementById('count-message')
     countRedMessage.innerText = count
     console.log(count);
-    // const bdgs=title.split('  ')
-    // console.log(bdgs);
     const redMessage = document.getElementById('red-message')
     const div = document.createElement('div')
     div.innerHTML = `
@@ -101,22 +86,15 @@ const redMessageBtn = (title, view) => {
 </div>
     `
     redMessage.appendChild(div)
-    // for(const post1 of datas.posts){
-    //     console.log(post1.isActive);
-    //     if(post1.isActive===true){
-    //         const cheakActive = document.getElementById('cheak-active')
-    //         cheakActive.classList.remove('bg-[#10B981]')
-    //         console.log(cheakActive.classList);
-    //     }
-    // }
+
 }
 
 const searchBtn = () => {
     const inputFiled = document.getElementById('input-filed').value
     console.log(inputFiled);
-    setTimeout(()=>{
+    setTimeout(() => {
         allPostLoad(inputFiled, 'isclick')
-    },2000)
+    }, 2000)
 }
 
 const latestPostLoad = async () => {
