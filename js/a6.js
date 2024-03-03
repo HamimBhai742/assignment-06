@@ -12,7 +12,7 @@ const displayShowAllPost = (data, values) => {
     if (values === 'isclick') {
         allPosts.textContent = ''
     }
-    console.log(posts.length);
+    console.log(posts);
     const noData = document.getElementById('no-data')
     if (posts.length <= 0) {
         noData.textContent = ""
@@ -20,6 +20,7 @@ const displayShowAllPost = (data, values) => {
         <h3 class="flex text-3xl font-bold justify-center">No Data Found!</h3>
         `
     }
+
     posts.forEach((post) => {
         console.log(post);
         // if (post.isActive === true){
@@ -37,17 +38,17 @@ const displayShowAllPost = (data, values) => {
                         </div>
                     </div>
                     <div class="card-body font-inter">
-                        <div class="text-[#12132DCC] flex">
+                        <div class="text-[#12132DCC] flex max-sm:text-xs">
                             <p><span>#</span> ${post.category}</p>
                             <p><span>Author :</span> ${post.author.name}</p>
                         </div>
                         <div>
-                            <h4 class="text-xl font-mulish text-[#12132D] font-bold">${post.title}</h4>
+                            <h4 class="lg:text-xl font-mulish text-[#12132D] font-bold text-lg">${post.title}</h4>
                             <p class=" text-[#12132D99]">${post.description}</p>
                         </div>
                         <div class="border-b-2 border-dashed border-[#12132D40] mt-1"></div>
                         <div class="flex items-center justify-between mt-2">
-                            <div class="flex text-[#12132D99] gap-5">
+                            <div class="flex text-[#12132D99] gap-5  max-sm:text-xs">
                                 <div class="flex gap-2"><span><i class="fa-regular fa-comment"></i></span>
                                     <p>${post.comment_count}</p></i>
                                 </div>
@@ -113,7 +114,9 @@ const redMessageBtn = (title, view) => {
 const searchBtn = () => {
     const inputFiled = document.getElementById('input-filed').value
     console.log(inputFiled);
-    allPostLoad(inputFiled, 'isclick')
+    setTimeout(()=>{
+        allPostLoad(inputFiled, 'isclick')
+    },2000)
 }
 
 const latestPostLoad = async () => {
@@ -128,7 +131,7 @@ const displayShowLatestPost = (data) => {
     data.forEach((post) => {
         console.log(post);
         const div = document.createElement('div')
-        div.classList = `card card-compact w-96 bg-base-100 font-mulish border-2 border-[#12132D26]`
+        div.classList = `card card-compact w-full lg:w-96 bg-base-100 font-mulish border-2 border-[#12132D26]`
         div.innerHTML = `
         <figure class="p-5 "><img class="rounded-xl" src="${post.cover_image}"
                             alt="Shoes" /></figure>
