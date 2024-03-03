@@ -35,14 +35,6 @@
         .bg-img1 {
             background: url('./images/bgbanner.png');
         }
-
-        #bg-banner {
-            background-color: #797DFC00FC;
-            background-image: linear-gradient(45deg, #797DFC, #797DFC00);
-            background-size: 100%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
     </style>
 </head>
 
@@ -71,7 +63,7 @@
                     <h2 class="lg:text-6xl font-[900] text-white text-4xl">Welcome to the <br><span class=""
                             id="bg-banner">Shanta</span> Forum</h2>
                     <p class="text-[#FFFFFFCC]">Shanta formue is located in Tejgaon, Dhaka-1208</p>
-                    <input class="p-3 rounded-3xl w-96 h-12" type="text" placeholder="Search here anything">
+                    <input id="input-filed" class="p-3 rounded-3xl w-96 h-12" type="text" placeholder="Search here anything">
                     <button
                         class="w-28 h-11 rounded-full text-white font-xl text-xl bg-[#797DFC] lg:right-[122px] relative">Search</button>
                 </div>
@@ -109,9 +101,14 @@
                 </p>
             </div>
             <div class="flex justify-between mt-10 max-sm:flex-col max-sm:mx-3">
-                <div class="card card-side bg-[#797DFC1A] border-2 border-[#797DFC] lg:max-w-[750px]">
-                    <figure><img src="https://daisyui.com/images/stock/photo-1635805737707-575885ab0820.jpg"
-                            alt="Movie" /></figure>
+                <div id="all-posts">
+                    <!-- <div class="card card-side bg-[#797DFC1A] border-2 border-[#797DFC] lg:max-w-[750px]">
+                    <div class="w-20 h-20 bg-white rounded-md mt-10 ml-3 relative">
+                        
+                        <div class="w-4 h-4 rounded-full bg-[#10B981] absolute -right-1 -top-1">
+
+                        </div>
+                    </div>
                     <div class="card-body font-inter">
                         <div class="text-[#12132DCC] flex">
                             <p><span>#</span> Music</p>
@@ -136,9 +133,10 @@
                                     <p>5<span>min</span></p></i>
                                 </div>
                             </div>
-                            <div class=""><img src="./images/email 1.png" alt=""></i></i></div>
+                            <button class=""><img src="./images/email 1.png" alt=""></i></i></button>
                         </div>
                     </div>
+                </div> -->
                 </div>
                 <div class="">
                     <div class="bg-[#12132D0D] lg:w-96 p-3 rounded-xl mt-3">
@@ -146,17 +144,17 @@
                             <h4 class="text-[#12132D] font-mulish font-bold text-xl">Title</h4>
                             <div class="flex gap-1 items-center">
                                 <img src="images/Frame.png" alt="">
-                                <p class="text-[#12132D99]">Mark as read (<span>1</span>)</p>
+                                <p class="text-[#12132D99]">Mark as read (<span id="count-message">0</span>)</p>
                             </div>
                         </div>
-                        <div class="bg-[#FFF] flex p-3 rounded-xl shadow-md items-center mt-3">
-                            <p class="text-[#12132D] font-semibold font-mulish">10 Kids Unaware of Their Halloween
-                                Costume</p>
-                            <p class="font-inter flex gap-1"><span><i
-                                        class="fa-regular fa-eye "></i></span><span>4564</span></p>
+                        <div id="red-message">
+                           
                         </div>
+                       
                     </div>
                 </div>
+                
+
             </div>
         </section>
 
@@ -167,14 +165,17 @@
                     view the results directly within the app. The integrated testing features allow for a streamlined .
                 </p>
             </div>
-            <div class="mt-5">
-                <div class="card card-compact w-96 bg-base-100 shadow-xl font-mulish">
+            <div class="flex justify-between mt-5" id="latest-post">
+                <!-- <div class="card card-compact w-96 bg-base-100 shadow-xl font-mulish">
                     <figure><img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
                             alt="Shoes" /></figure>
                     <div class="card-body">
-                        <p class="text-[#12132D99]"><span><i class="fa-solid fa-calendar-days"></i></span> 29 January 2024</p>
-                        <h2 class="card-title text-[12132D] font-extrabold">What will a mars habitat force that impact in our daily life!!!</h2>
-                        <p class="text-[#12132D99]">Yes, you can run unit tests and view the results directly within the app. </p>
+                        <p class="text-[#12132D99]"><span><i class="fa-solid fa-calendar-days"></i></span> 29 January
+                            2024</p>
+                        <h2 class="card-title text-[12132D] font-extrabold">What will a mars habitat force that impact
+                            in our daily life!!!</h2>
+                        <p class="text-[#12132D99]">Yes, you can run unit tests and view the results directly within the
+                            app. </p>
                         <div class="card-actions">
                             <img class="w-14 h-14 rounded-full border-2 border-black" src="images/joinforum.png" alt="">
                             <div>
@@ -183,13 +184,14 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </section>
     </main>
     <footer>
 
     </footer>
+    <script src="js/a6.js"></script>
 </body>
 
 </html>
