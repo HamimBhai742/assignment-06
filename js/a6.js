@@ -1,13 +1,25 @@
-const allPostLoad = async () => {
-    const res = await fetch('https://openapi.programming-hero.com/api/retro-forum/posts')
+const allPostLoad = async (inputText, values) => {
+    const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts?category=${inputText}`)
     const data = await res.json()
-    displayShowAllPost(data)
+    displayShowAllPost(data, values)
 }
 
-const displayShowAllPost = (data) => {
+const displayShowAllPost = (data, values) => {
+    // console.log(values);
     const posts = data.posts
-    console.log(posts);
+
     const allPosts = document.getElementById('all-posts')
+    if (values === 'isclick') {
+        allPosts.textContent = ''
+    }
+    console.log(posts.length);
+    const noData = document.getElementById('no-data')
+    if (posts.length <= 0) {
+        noData.textContent = ""
+        noData.innerHTML=`
+        <h3 class="flex text-3xl font-bold justify-center">No Data Found!</h3>
+        `
+    }
     posts.forEach((post) => {
         console.log(post);
         // if (post.isActive === true){
@@ -65,7 +77,9 @@ const displayShowAllPost = (data) => {
     });
 
 }
-allPostLoad()
+allPostLoad('coding')
+allPostLoad('comedy')
+allPostLoad('music')
 
 let count = 0
 const redMessageBtn = (title, view) => {
@@ -96,6 +110,11 @@ const redMessageBtn = (title, view) => {
     // }
 }
 
+const searchBtn = () => {
+    const inputFiled = document.getElementById('input-filed').value
+    console.log(inputFiled);
+    allPostLoad(inputFiled, 'isclick')
+}
 
 const latestPostLoad = async () => {
     const res = await fetch('https://openapi.programming-hero.com/api/retro-forum/latest-posts')
@@ -104,7 +123,7 @@ const latestPostLoad = async () => {
 }
 
 const displayShowLatestPost = (data) => {
-    console.log(data);
+    // console.log(data);
     const letastPostContainer = document.getElementById('latest-post')
     data.forEach((post) => {
         console.log(post);
@@ -130,3 +149,4 @@ const displayShowLatestPost = (data) => {
     })
 }
 latestPostLoad()
+

@@ -35,6 +35,14 @@
         .bg-img1 {
             background: url('./images/bgbanner.png');
         }
+
+        #bg-banner {
+                background-color: #797DFC00;
+                background-image: linear-gradient(90deg, #797DFC, #797DFC00);
+                background-size: 100%;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+        }
     </style>
 </head>
 
@@ -44,16 +52,19 @@
         <nav class="flex justify-between font-mulish items-center">
             <h3 class="lg:text-4xl font-[900] text-[#12132D] text-2xl">SHANTA</h3>
             <div class="text-[#12132D99] flex gap-5 items-center">
-                <div class="bg-[#12132D08] px-3 py-2 border-2 border-[#0307121A] rounded-full max-sm:hidden"><i
-                        class="fa-solid fa-house"></i></div>
-                <div class="bg-[#12132D08] px-3 py-2 border-2 border-[#0307121A] rounded-full max-sm:hidden"><i
-                        class="fa-solid fa-pen"></i></div>
-                <div class="bg-[#12132D08] px-3 py-2 border-2 border-[#0307121A] rounded-full max-sm:hidden"><i
-                        class="fa-solid fa-user-plus"></i></div>
-                <div class="bg-[#12132D08] px-3 py-2 border-2 border-[#0307121A] rounded-full max-sm:hidden"><i
-                        class="fa-regular fa-flag"></i></div>
+                <div class="tooltip bg-[#12132D08] px-3 py-2 border-2 border-[#0307121A] rounded-full max-sm:hidden"
+                    data-tip="Home">
+                    <i class="fa-solid fa-house"></i>
+                </div>
+                <div class="tooltip bg-[#12132D08] px-3 py-2 border-2 border-[#0307121A] rounded-full max-sm:hidden"
+                    data-tip="Edit"><i class="fa-solid fa-pen"></i></div>
+                <div class="tooltip bg-[#12132D08] px-3 py-2 border-2 border-[#0307121A] rounded-full max-sm:hidden"
+                    data-tip="Users"><i class="fa-solid fa-user-plus"></i></div>
+                <div class="tooltip bg-[#12132D08] px-3 py-2 border-2 border-[#0307121A] rounded-full max-sm:hidden"
+                    data-tip="Flag"><i class="fa-regular fa-flag"></i></div>
                 <button class="w-28 h-12 bg-[#797DFC] text-white text-xl font-bold rounded-3xl">Sing In</button>
             </div>
+
         </nav>
 
         <div class="bg-[#12132D] lg:mt-5 rounded-3xl font-mulish mt-5">
@@ -63,8 +74,9 @@
                     <h2 class="lg:text-6xl font-[900] text-white text-4xl">Welcome to the <br><span class=""
                             id="bg-banner">Shanta</span> Forum</h2>
                     <p class="text-[#FFFFFFCC]">Shanta formue is located in Tejgaon, Dhaka-1208</p>
-                    <input id="input-filed" class="p-3 rounded-3xl w-96 h-12" type="text" placeholder="Search here anything">
-                    <button
+                    <input id="input-filed" class="p-3 rounded-3xl w-96 h-12" type="text"
+                        placeholder="Search here anything">
+                    <button onclick="searchBtn()"
                         class="w-28 h-11 rounded-full text-white font-xl text-xl bg-[#797DFC] lg:right-[122px] relative">Search</button>
                 </div>
 
@@ -100,7 +112,7 @@
                     view the results directly within the app. The integrated testing features allow for a streamlined .
                 </p>
             </div>
-            <div class="flex justify-between mt-10 max-sm:flex-col max-sm:mx-3">
+            <div class="flex justify-between mt-10 max-sm:flex-col max-sm:mx-3" id="no-data">
                 <div id="all-posts">
                     <!-- <div class="card card-side bg-[#797DFC1A] border-2 border-[#797DFC] lg:max-w-[750px]">
                     <div class="w-20 h-20 bg-white rounded-md mt-10 ml-3 relative">
@@ -148,12 +160,12 @@
                             </div>
                         </div>
                         <div id="red-message">
-                           
+
                         </div>
-                       
+
                     </div>
                 </div>
-                
+
 
             </div>
         </section>
