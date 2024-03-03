@@ -10,6 +10,8 @@ const displayShowAllPost = (data, values) => {
 
     const allPosts = document.getElementById('all-posts')
     if (values === 'isclick') {
+        const lodingSpinner=document.getElementById('loding-spinner')
+        lodingSpinner.classList.add('hidden')
         allPosts.textContent = ''
     }
     console.log(posts);
@@ -22,7 +24,7 @@ const displayShowAllPost = (data, values) => {
     }
 
     posts.forEach((post) => {
-        console.log(post);
+        const lodingSpinner=document.getElementById('loding-spinner')
         console.log(post.isActive);
         const div = document.createElement('div')
         div.classList = `card card-side bg-[#797DFC1A] border-2 border-[#797DFC] lg:max-w-[750px] mt-3`
@@ -90,6 +92,8 @@ const redMessageBtn = (title, view) => {
 }
 
 const searchBtn = () => {
+    const lodingSpinner=document.getElementById('loding-spinner')
+    lodingSpinner.classList.remove('hidden')
     const inputFiled = document.getElementById('input-filed').value
     console.log(inputFiled);
     setTimeout(() => {
