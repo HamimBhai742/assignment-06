@@ -5,16 +5,16 @@ const allPostLoad = async (inputText, values) => {
 }
 
 const displayShowAllPost = (data, values) => {
-    console.log(data.posts);
+    // console.log(data.posts);
     const posts = data.posts
 
     const allPosts = document.getElementById('all-posts')
     if (values === 'isclick') {
-        const lodingSpinner=document.getElementById('loding-spinner')
+        const lodingSpinner = document.getElementById('loding-spinner')
         lodingSpinner.classList.add('hidden')
         allPosts.textContent = ''
     }
-    console.log(posts);
+    // console.log(posts);
     const noData = document.getElementById('no-data')
     if (posts.length <= 0) {
         noData.textContent = ""
@@ -23,15 +23,17 @@ const displayShowAllPost = (data, values) => {
         `
     }
 
+
     posts.forEach((post) => {
-        const lodingSpinner=document.getElementById('loding-spinner')
-        console.log(post.isActive);
+        const lodingSpinner = document.getElementById('loding-spinner')
+        // console.log(post.isActive);
+        // console.log(post);
         const div = document.createElement('div')
         div.classList = `card card-side bg-[#797DFC1A] border-2 border-[#797DFC] lg:max-w-[750px] mt-3`
         div.innerHTML = `
                     <div class="w-20 h-20  rounded-md mt-10 ml-3 relative">
                     <img class="rounded-lg" src="${post.image}" alt="">
-                        <div class="${post.isActive?'bg-[#10B981]':'bg-[#FF3434]'} w-4 h-4 rounded-full absolute -right-1 -top-1" id="cheak-active" >
+                        <div class="${post.isActive ? 'bg-[#10B981]' : 'bg-[#FF3434]'} w-4 h-4 rounded-full absolute -right-1 -top-1" id="cheak-active" >
 
                         </div>
                     </div>
@@ -57,27 +59,28 @@ const displayShowAllPost = (data, values) => {
                                     <p>${post.posted_time}<span> min</span></p></i>
                                 </div>
                             </div>
-                            <button onclick="redMessageBtn('${post.title}','${post.view_count}')"><img src="./images/email 1.png" alt=""></i></i></button>
+                            <button onclick="redMessageBtn('${post.title}','${post.view_count}')" id="red-btn2"><img src="./images/email 1.png" alt=""></i></i></button>
                         </div>
                     </div>
         `
+
         allPosts.appendChild(div)
-        const cheakActive = document.getElementById('cheak-active')
-        console.log(cheakActive.classList);
+        // const cheakActive = document.getElementById('cheak-active')
+        // console.log(cheakActive.classList);
     });
 }
-allPostLoad('coding')
 allPostLoad('comedy')
 allPostLoad('music')
+allPostLoad('coding')
 
 
 let count = 0
 const redMessageBtn = (title, view) => {
-    console.log(title, view);
+    // console.log(title, view);
     count++
     const countRedMessage = document.getElementById('count-message')
     countRedMessage.innerText = count
-    console.log(count);
+    // console.log(count);
     const redMessage = document.getElementById('red-message')
     const div = document.createElement('div')
     div.innerHTML = `
@@ -91,11 +94,12 @@ const redMessageBtn = (title, view) => {
 
 }
 
+
 const searchBtn = () => {
-    const lodingSpinner=document.getElementById('loding-spinner')
+    const lodingSpinner = document.getElementById('loding-spinner')
     lodingSpinner.classList.remove('hidden')
     const inputFiled = document.getElementById('input-filed').value
-    console.log(inputFiled);
+    // console.log(inputFiled);
     setTimeout(() => {
         allPostLoad(inputFiled, 'isclick')
     }, 2000)
@@ -111,7 +115,7 @@ const displayShowLatestPost = (data) => {
     // console.log(data);
     const letastPostContainer = document.getElementById('latest-post')
     data.forEach((post) => {
-        console.log(post);
+        // console.log(post);
         const div = document.createElement('div')
         div.classList = `card card-compact w-full lg:w-96 bg-base-100 font-mulish border-2 border-[#12132D26]`
         div.innerHTML = `
@@ -134,4 +138,5 @@ const displayShowLatestPost = (data) => {
     })
 }
 latestPostLoad()
+
 

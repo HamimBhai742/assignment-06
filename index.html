@@ -24,6 +24,7 @@
 
     <!-- internal css part -->
     <style>
+        /* font  */
         .font-mulish {
             font-family: "Mulish", sans-serif;
         }
@@ -32,10 +33,12 @@
             font-family: "Inter", sans-serif;
         }
 
+        /* banner bg-img */
         .bg-img1 {
             background: url('./images/bgbanner.png');
         }
 
+        /* banner text-color */
         #bg-banner {
             background-color: #797DFC00;
             background-image: linear-gradient(90deg, #797DFC, #797DFC00);
@@ -44,6 +47,7 @@
             -webkit-text-fill-color: transparent;
         }
 
+        /* footer bg-color */
         footer {
             background: linear-gradient(180deg, rgba(18, 19, 45, 0.05) 0%, rgba(18, 19, 45, 0.00) 100%);
         }
@@ -51,10 +55,10 @@
 </head>
 
 <body>
-
+    <!-- header Section -->
     <header class="lg:max-w-[1170px] lg:mx-auto lg:my-10 mt-3 mx-3">
         <nav class="flex justify-between font-mulish items-center">
-            <h3 class="lg:text-4xl font-[900] text-[#12132D] text-2xl">SHANTA</h3>
+            <h3 class="lg:text-4xl font-[900] text-[#12132D] text-2xl">ShaNta</h3>
             <div class="text-[#12132D99] flex gap-5 items-center">
                 <div class="tooltip bg-[#12132D08] px-3 py-2 border-2 border-[#0307121A] rounded-full max-sm:hidden"
                     data-tip="Home">
@@ -70,13 +74,12 @@
             </div>
 
         </nav>
-
         <div class="bg-[#12132D] lg:mt-5 rounded-3xl font-mulish mt-5">
             <div
                 class=" flex justify-around lg:pt-16 items-center bg-img1 lg:pb-8 max-sm:flex-col p-5 max-sm:space-y-3">
                 <div class="lg:max-w-[600px] lg:space-y-10 max-sm:space-y-3">
                     <h2 class="lg:text-6xl font-[900] text-white text-4xl">Welcome to the <br><span class=""
-                            id="bg-banner">Shanta</span> Forum</h2>
+                            id="bg-banner">ShaNta</span> Forum</h2>
                     <p class="text-[#FFFFFFCC]">Shanta formue is located in Tejgaon, Dhaka-1208</p>
                     <input id="input-filed" class="p-3 rounded-3xl lg:w-96 h-12 w-full" type="text"
                         placeholder="Search here anything">
@@ -111,14 +114,17 @@
     <main>
         <section class="lg:max-w-[1170px] mx-auto max-sm:mt-5">
             <div class="text-center mx-3">
-                <h3 class="text-[#12132D] lg:text-4xl font-[900] text-2xl">Let’s Discuss</h3>
-                <p class="text-[#12132D99] font-inter max-w-[600px] flex mx-auto mt-3">Yes, you can run unit tests and
+                <h3 class="text-[#12132D] lg:text-4xl font-[900] text-2xl font-mulish">Let’s Discuss</h3>
+                <p class="text-[#12132D99] font-inter max-w-[600px] flex mx-auto mt-3 font-inter">Yes, you can run unit
+                    tests and
                     view the results directly within the app. The integrated testing features allow for a streamlined .
                 </p>
             </div>
+            <!-- loding spinner section -->
             <div class="hidden mt-7" id="loding-spinner">
                 <span class="loading loading-bars loading-lg"></span>
             </div>
+            <!-- all post section -->
             <div class="flex justify-between mt-10 max-sm:flex-col max-sm:mx-3" id="no-data">
                 <div id="all-posts">
 
@@ -133,6 +139,7 @@
                                 <p class="text-[#12132D99]">Mark as read (<span id="count-message">0</span>)</p>
                             </div>
                         </div>
+                        <!-- red massage section -->
                         <div id="red-message">
 
                         </div>
@@ -143,24 +150,37 @@
 
             </div>
         </section>
+      
+        <section class="mt-10">
+            <div class="bg-[#12132D] max-w-[1170px] mx-auto flex justify-between items-center py-7 lg:px-12 rounded-3xl max-sm:flex-col-reverse max-sm:mx-3 px-5 max-sm:gap-1">
+                <div class="font-mulish space-y-5">
+                  <h3 class="text-[#FFF] lg:text-5xl font-[900] text-3xl">Join Our Forum</h3>
+                  <p class="text-[#FFFFFFCC] text-lg max-w-[600px]">Bring your ideas to life with inspiration, seasonal offers, exclusive events, and lots of good things in store.</p>
+                  <button class="bg-[#797DFC] text-white text-xl font-bold w-48 h-12 rounded-full text-center">Registered Now</button>
+                </div>
+                <div><img src="images/joinforum.png" alt=""></div>
+              </div>
+        </section>
 
         <section class="max-w-[1170px] mx-auto mt-10">
             <div class="text-center mx-3">
-                <h3 class="text-[#12132D]  lg:text-4xl font-[900] text-2xl">Latest Posts</h3>
-                <p class="text-[#12132D99] font-inter max-w-[600px] flex mx-auto mt-3">Yes, you can run unit tests and
+                <h3 class="text-[#12132D]  lg:text-4xl font-[900] text-2xl font-mulish">Latest Posts</h3>
+                <p class="text-[#12132D99] font-inter max-w-[600px] flex mx-auto mt-3 font-inter">Yes, you can run unit
+                    tests and
                     view the results directly within the app. The integrated testing features allow for a streamlined .
                 </p>
             </div>
+            <!-- latest post section -->
             <div class="flex justify-between mt-5 max-sm:flex-col max-sm:mx-3 max-sm:gap-3" id="latest-post">
 
             </div>
         </section>
     </main>
-    <footer class="footer footer-center p-10 mt-10">
+    <footer class="footer footer-center p-10 mt-10 font-mulish">
         <aside>
 
-            <h3 class="lg:text-4xl font-[900] text-[#12132D] text-2xl">SHANTA</h3>
-            <p class="text-[#12132DB2] max-w-[750px]">The concept of the 'Twin Tower' has always fascinated people
+            <h3 class="lg:text-4xl font-[900] text-[#12132D] text-2xl ">ShaNta</h3>
+            <p class="text-[#12132DB2] max-w-[800px]">The concept of the 'Twin Tower' has always fascinated people
                 living in
                 developing countries, and it is no
                 different in Bangladesh as well. With the perfect blend of intricate design and superlative construction
@@ -170,10 +190,13 @@
         </aside>
         <nav>
             <div class="grid grid-flow-col gap-4">
-                <a href=""><i class="fa-brands fa-facebook text-4xl"></i></a>
-                <a href=""><i class="fa-brands fa-twitter text-4xl"></i></a>
-                <a href=""><i class="fa-brands fa-instagram text-4xl"></i></a>
-                <a href=""><i class="fa-brands fa-github text-4xl"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=100067749370411" target="_blank"><i
+                        class="fa-brands fa-facebook text-4xl"></i></a>
+                <a href="https://twitter.com/" target="_blank"><i class="fa-brands fa-twitter text-4xl"></i></a>
+                <a href="https://www.instagram.com/hamim658742/" target="_blank"><i
+                        class="fa-brands fa-instagram text-4xl"></i></a>
+                <a href="https://github.com/HamimBhai742?tab=repositories" target="_blank"><i
+                        class="fa-brands fa-github text-4xl"></i></a>
             </div>
         </nav>
         <div class="border-b-2 border-[#30325E1A] min-w-[1170px] max-sm:hidden"></div>
